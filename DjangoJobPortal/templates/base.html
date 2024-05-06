@@ -14,7 +14,7 @@
 <body>
     <nav class="navbar navbar-expand-1g navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Django Job Portal</a>
+            <a class="navbar-brand" href="{% url 'dashboard'%}">Django Job Portal</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -60,7 +60,7 @@
                     </li>
                     {% if request.user.has_company %}
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Create Job Ads</a>
+                        <a class="nav-link" href="{% url 'create-job'%}">Create Job Ads</a>
                     </li>
                     {% else %}
                     <li class="nav-item">
