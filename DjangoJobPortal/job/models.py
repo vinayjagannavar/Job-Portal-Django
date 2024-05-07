@@ -15,3 +15,14 @@ class Job(models.Model):
 
     def __str__(self):
         return self.title
+
+class ApplyJobs(models.Model):
+    status_choices = (
+        ('Accepted','Accepted'),
+        ('Declined','Declined'),
+        ('Pending','Pending'),
+    )
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    job = models.ForeignKey(Job, on_delete=models.CASCADE)
+    timestamp = models.DateTimeField(auto_now=True)
+    status = models.CharField(max_length=20, choices=status_choices)

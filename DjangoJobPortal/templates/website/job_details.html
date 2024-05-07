@@ -11,7 +11,11 @@
                 {{ job.description }}
             </p>
             {{ job.location }} | ${{ job.salary|intcomma }}
-            <button class="btn btn-primary btn-lg" type="button">Apply Now</button>
+            {% if job.has_applied == False %}
+            <a href={% url 'apply-to-job' job.pk%} class="btn btn-primary btn-lg">Apply Now</a>
+            {% else %}
+            <p><span class="text-danger">Applied!</span></p>
+            {% endif %}
         </div>
     </div>
 </section>
