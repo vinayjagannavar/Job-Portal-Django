@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     'resume',
     'company',
     'job',
+    'website',
+    'django.contrib.humanize',
 ]
 
 MIDDLEWARE = [
