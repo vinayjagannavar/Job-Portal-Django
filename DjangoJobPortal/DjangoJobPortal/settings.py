@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'job',
     'website',
     'django.contrib.humanize',
+    'django_filters',
 ]
 
 MIDDLEWARE = [

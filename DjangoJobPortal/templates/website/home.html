@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load humanize %}
 
 {% block content %}
 
@@ -61,42 +62,25 @@
 </section>
 
 <div class="row row-cols-1 row-cols-md-3 g-4">
+    {% for job in filter.qs %}
     <div class="col">
         <div class="card h-100">
             <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <h5 class="card-title">{{job.title}}</h5>
+                <p class="card-text">Industry: {{job.industry}}</p>
+                <p class="card-text">Job Type: {{job.job_type}}</p>
+                <p class="card-text">Location: {{job.city}}, {{job.state}}</p>
+                <p class="card-text">Salary: ${{job.salary}}</p>
             </div>
             <div class="card-footer">
-                <small class="text-muted">Last updated 3 mins ago</small>
+                <small class="text-muted">{{job.timestamp|naturaltime}}</small>
             </div>
         </div>
     </div>
-    <div class="col">
-        <div class="card h-100">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-            </div>
-            <div class="card-footer">
-                <small class="text-muted">Last updated 3 mins ago</small>
-            </div>
-        </div>
-    </div>
-    <div class="col">
-        <div class="card h-100">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-            </div>
-            <div class="card-footer">
-                <small class="text-muted">Last updated 3 mins ago</small>
-            </div>
-        </div>
-    </div>
+    {% endfor %}
 </div>
 
-<div class="row align-items-center mt-4">
+{% comment %} <div class="row align-items-center mt-4">
     <div class="col-md-10 mx-auto col-lg-2">
         <nav aria-label="...">
             <ul class="pagination">
@@ -114,6 +98,6 @@
             </ul>
         </nav>
     </div>
-</div>
+</div> {% endcomment %}
 
 {% endblock content %}
