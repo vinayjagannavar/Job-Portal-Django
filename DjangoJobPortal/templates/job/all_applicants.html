@@ -17,14 +17,14 @@
                 </tr>
             </thead>
             <tbody>
-                {% for applicant in applicants%}
+                {% for applicant in applicants %}
                 <tr>
                     <td>{{applicant.user.resume.first_name}}</td>
                     <td>{{applicant.user.resume.last_name}}</td>
                     <td>{{applicant.user.resume.location}}</td>
                     <td>{{applicant.user.resume.job_title}}</td>
                     <td>{{applicant.timestamp}}</td>
-                    <td><a href="{{applicant.user.resume.upload_resume.url}}"><small>Download Resume</small></a></td>
+                    <td><a target="_blank" href="{{applicant.user.resume.upload_resume.url}}"><small>Download Resume</small></a></td>
                 </tr>
                 {% endfor %}
             </tbody>
