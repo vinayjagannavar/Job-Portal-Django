@@ -1,6 +1,7 @@
 from django.db import models
 from users.models import User
 from company.models import Company
+from resume.models import Resume
 
 class State(models.Model):
     name = models.CharField(max_length=100)
