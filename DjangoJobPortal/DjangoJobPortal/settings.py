@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-_=v2n!-j=atn+z$l-_m()8&egz-c5_75r0fb(l)h5epqx2x!!f
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['3.137.203.198']
 
 
 # Application definition
@@ -135,3 +135,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'users.User'
 AUTHENTICATION_BACKENDS = ['users.backends.EmailBackend']
+
