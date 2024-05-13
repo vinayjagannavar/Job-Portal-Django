@@ -27,6 +27,7 @@ SECRET_KEY = 'django-insecure-_=v2n!-j=atn+z$l-_m()8&egz-c5_75r0fb(l)h5epqx2x!!f
 DEBUG = True
 
 ALLOWED_HOSTS = ['3.137.203.198']
+# ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -82,12 +83,33 @@ WSGI_APPLICATION = 'DjangoJobPortal.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+'''
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
+   'default': {
+       'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
+   }
+}
+
+'''
+DATABASES = {
+
+    'default': {
+
+        'ENGINE': 'django.db.backends.postgresql',
+
+        'NAME': 'JobPortal',
+
+        'USER': 'vinay',
+
+        'PASSWORD': 'Vino$1984',
+
+        'HOST': 'database-1.cnq80ciky9yh.us-east-2.rds.amazonaws.com',
+
+        'PORT': '5432',
     }
 }
+
 
 
 # Password validation
